@@ -60,7 +60,7 @@ export const Menu: FC<MenuProps> = (props) => {
       // child是 ReactNode类型，先断言成FunctionComponentElement类型，再拿到displayName内置属性
       const childElement = child as React.FunctionComponentElement<MenuItemProps>;
       const { displayName } = childElement.type;
-      if ( displayName && (displayName === "MenuItem" || displayName === "SubMenu")) {
+      if (displayName === "MenuItem" || displayName === "SubMenu") {
         return React.cloneElement(childElement, {
           // 添加index属性，利用遍历时可以拿到的index变量来设置，这样外界在使用时不必特地给MenuItem传入index属性
           index: index.toString(),
