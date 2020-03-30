@@ -2,7 +2,7 @@ import React from "react";
 import { render, fireEvent, wait } from "@testing-library/react";
 import Alert, { AlertProps } from "./alert";
 
-jest.mock("../Icon/icon", () => {
+jest.mock("../Icon", () => {
   return (props: any) => {
     return <span>{props.icon}</span>;
   };

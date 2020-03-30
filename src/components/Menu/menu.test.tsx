@@ -4,7 +4,7 @@ import Menu, { MenuProps } from "./menu";
 import MenuItem from "./menuItem";
 import SubMenu from "./subMenu";
 
-jest.mock("../Icon/icon", () => {
+jest.mock("../Icon", () => {
   return () => {
     return <i className="fa" />;
   };

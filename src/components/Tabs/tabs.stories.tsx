@@ -2,30 +2,29 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
-import Tabs from "./tabs";
-import TabItem from "./tabItem";
-import Icon from "../Icon/icon";
+import Tabs from "./index";
+import Icon from "../Icon";
 
 const defaultTabs = () => (
   <Tabs onSelect={action("selected")}>
-    <TabItem label="选项卡一">this is content one</TabItem>
-    <TabItem label="选项卡二">this is content two</TabItem>
+    <Tabs.Item label="选项卡一">this is content one</Tabs.Item>
+    <Tabs.Item label="选项卡二">this is content two</Tabs.Item>
   </Tabs>
 );
 
 const cardTabs = () => (
   <Tabs onSelect={action("selected")} type="card">
-    <TabItem label="card1">this is card one</TabItem>
-    <TabItem label="card2">this is content two</TabItem>
-    <TabItem label="disabled" disabled>
+    <Tabs.Item label="card1">this is card one</Tabs.Item>
+    <Tabs.Item label="card2">this is content two</Tabs.Item>
+    <Tabs.Item label="disabled" disabled>
       this is content three
-    </TabItem>
+    </Tabs.Item>
   </Tabs>
 );
 
 const customTabs = () => (
   <Tabs onSelect={action("selected")} type="card">
-    <TabItem
+    <Tabs.Item
       label={
         <>
           <Icon icon="check-circle" /> 自定义图标{" "}
@@ -33,8 +32,8 @@ const customTabs = () => (
       }
     >
       this is card one
-    </TabItem>
-    <TabItem label="tab2">this is content two</TabItem>
+    </Tabs.Item>
+    <Tabs.Item label="tab2">this is content two</Tabs.Item>
   </Tabs>
 );
 storiesOf("Tabs", module)
