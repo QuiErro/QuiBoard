@@ -25,12 +25,6 @@ addDecorator(storyWrapper);
 addDecorator(withInfo);
 // 配置addon-info
 addParameters({ info: { inline: true, header: false } });
-// const loaderFn = () => {
-//   const allExports = [require('../src/welcome.stories.tsx')];
-//   const req = require.context('../src/components', true, /\.stories\.tsx$/);
-//   req.keys().forEach(fname => allExports.push(req(fname)));
-//   return allExports;
-// };
 
 const loaderFn = () => {
   return [
@@ -40,6 +34,7 @@ const loaderFn = () => {
     require("../src/components/Menu/menu.stories.tsx"),
     require("../src/components/Tabs/tabs.stories.tsx"),
     require("../src/components/Progress/progress.stories.tsx"),
+    require("../src/components/Input/input.stories.tsx"),
   ];
 };
 
