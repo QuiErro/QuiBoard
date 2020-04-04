@@ -1,0 +1,34 @@
+.quib-tag {
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  border-radius: 3px;
+  @include tag-size($tag-padding-y, $tag-padding-x, $tag-font-size);
+
+  .quib-icon {
+    margin-left: 5px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+}
+
+.tag-lg {
+  @include tag-size($tag-padding-y-lg, $tag-padding-x-lg, $tag-font-size-lg);
+}
+.tag-sm {
+  @include tag-size($tag-padding-y-sm, $tag-padding-x-sm, $tag-font-size-sm);
+}
+
+@each $key, $val in $theme-colors {
+  .tag-#{$key} {
+    color: $val;
+    border: 1px solid rgba($val, 0.2);
+    background-color: rgba($val, 0.1);
+
+    .quib-icon {
+      &:hover {
+        color: darken($val, 10%);
+      }
+    }
+  }
+}

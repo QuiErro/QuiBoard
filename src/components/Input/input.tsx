@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import Icon from "../Icon";
 
-// Omit 忽略原生的size属性
+// Omit 忽略size属性
 export interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, "size"> {
   /** Input是否禁用 */
   disabled?: boolean;
@@ -26,7 +26,7 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, "size
 */
 
 export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
-  const { disabled, size, icon, prepend, append, style, ...restProps } = props;
+  const { disabled, size, allowClear, icon, prepend, append, style, ...restProps } = props;
   const classes = classNames("quib-input-wrapper", {
     [`input-size-${size}`]: size,
     "is-disabled": disabled,

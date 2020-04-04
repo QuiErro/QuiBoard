@@ -332,3 +332,20 @@ $nav-tabs-link-active-color: $primary !default;
 $nav-tabs-link-active-bg: $body-bg !default;
 $nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg !default;
 $nav-tabs-content-margin: 1rem !default;
+
+$icon-clear-color: rgba(0, 0, 0, 0.25) !default;
+
+// Tag
+
+$tag-padding-y: 0.04rem !default;
+$tag-padding-x: 0.45rem !default;
+$tag-font-size: $font-size-base !default;
+
+//不同大小Tag的 padding 和 font size
+$tag-padding-y-sm: 1px !default;
+$tag-padding-x-sm: 3px !default;
+$tag-font-size-sm: $font-size-sm !default;
+
+$tag-padding-y-lg: 0.12rem !default;
+$tag-padding-x-lg: 0.6rem !default;
+$tag-font-size-lg: $font-size-base !default;

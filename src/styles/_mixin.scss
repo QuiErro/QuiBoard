@@ -83,3 +83,8 @@
   border-top-left-radius: $raduis;
   border-top-right-radius: $raduis;
 }
+
+@mixin tag-size($padding-y, $padding-x, $font-size) {
+  padding: $padding-y $padding-x;
+  font-size: $font-size;
+}
