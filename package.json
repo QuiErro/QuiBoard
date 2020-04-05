@@ -45,10 +45,8 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,tsx,ts,less,md,json}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ],
-    "**/*.scss": "stylelint --syntax scss",
     "**/*.{js,ts,tsx}": "yarn run lint-staged:js"
   },
   "browserslist": {
