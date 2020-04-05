@@ -34,6 +34,7 @@
     "lint:fix": "eslint --fix \"src/**/*.+(js|jsx|ts|tsx|json|css|scss)\"",
     "prettier": "prettier -c --write \"**/*.+(js|jsx|ts|tsx|json|css|scss|md)\"",
     "lint-staged": "lint-staged",
+    "lint-staged:js": "yarn run lint:fix",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
   },
@@ -43,12 +44,12 @@
     }
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "tslint --project tsconfig.json"
+    "**/*.{js,jsx,tsx,ts,less,md,json}": [
+      "prettier --write",
+      "git add"
     ],
-    "*.{scss}": [
-      "stylelint *.scss"
-    ]
+    "**/*.scss": "stylelint --syntax scss",
+    "**/*.{js,ts,tsx}": "yarn run lint-staged:js"
   },
   "browserslist": {
     "production": [
