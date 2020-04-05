@@ -33,8 +33,22 @@
     "lint": "eslint \"src/**/*.+(js|jsx|ts|tsx|json|css|scss)\"",
     "lint:fix": "eslint --fix \"src/**/*.+(js|jsx|ts|tsx|json|css|scss)\"",
     "prettier": "prettier -c --write \"**/*.+(js|jsx|ts|tsx|json|css|scss|md)\"",
+    "lint-staged": "lint-staged",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "tslint --project tsconfig.json"
+    ],
+    "*.{scss}": [
+      "stylelint *.scss"
+    ]
   },
   "browserslist": {
     "production": [
@@ -57,6 +71,8 @@
     "@storybook/react": "^5.3.17",
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.1.1",
     "prettier": "^2.0.2",
     "react-docgen-typescript-loader": "^3.7.1"
   }
