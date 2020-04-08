@@ -38,6 +38,7 @@ const loaderFn = () => {
     require("../src/components/AutoComplete/autoComplete.stories.tsx"),
     require("../src/components/Select/select.stories.tsx"),
     require("../src/components/Tag/tag.stories.tsx"),
+    require("../src/components/Upload/upload.stories.tsx"),
   ];
 };
 

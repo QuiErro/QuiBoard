@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, ButtonHTMLAttributes, AnchorHTMLAttributes } from "react";
+import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes } from "react";
 import classNames from "classnames";
 
 /*
@@ -28,7 +28,8 @@ interface BaseButtonProps {
   btnType?: ButtonType;
   /** Button的跳转链接 */
   href?: string;
-  children: ReactNode;
+  // children: ReactNode;
+  // 不必再加children属性，组件使用了FC类型，props会获得children属性
 }
 
 type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>; // 集成基础属性和原生button属性
