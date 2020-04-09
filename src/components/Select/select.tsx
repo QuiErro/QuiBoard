@@ -1,6 +1,7 @@
 import React, {
   FC,
   useState,
+  ChangeEvent,
   createContext,
   useRef,
   FunctionComponentElement,
@@ -54,6 +55,7 @@ export const Select: FC<SelectProps> = (props) => {
   const [selectedValues, setSelectedValues] = useState<string[]>(
     Array.isArray(defaultValue) ? defaultValue : [],
   );
+  const [options, setOptions] = useState<string[]>([]);
   const [menuOpen, setOpen] = useState(false);
   const [value, setValue] = useState(typeof defaultValue === "string" ? defaultValue : "");
   const handleOptionClick = (value: string, isSelected?: boolean) => {
@@ -77,6 +79,21 @@ export const Select: FC<SelectProps> = (props) => {
       onChange(value, updatedValues);
     }
   };
+  const handleInputValueChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.trim();
+    if (multiple) return;
+    setValue(value);
+  };
+  useEffect(() => {
+    const tempArr: String[] = [];
+    children.forEach((item) => {
+      const {
+        props: { value },
+      } = item;
+      if (value !== "disabled") tempArr.push(value);
+    });
+    setOptions(tempArr);
+  }, [children]);
   useEffect(() => {
     // focus input
     if (input.current) {
@@ -94,6 +111,9 @@ export const Select: FC<SelectProps> = (props) => {
     }
   });
   useClickOutside(containerRef, () => {
+    if (!multiple && options.indexOf(value) === -1) {
+      setValue("");
+    }
     setOpen(false);
     if (onVisibleChange && menuOpen) {
       onVisibleChange(false);
@@ -137,7 +157,8 @@ export const Select: FC<SelectProps> = (props) => {
           ref={input}
           placeholder={placeholder}
           value={value}
-          readOnly
+          readOnly={multiple}
+          onChange={handleInputValueChange}
           icon="angle-down"
           disabled={disabled}
           name={name}
