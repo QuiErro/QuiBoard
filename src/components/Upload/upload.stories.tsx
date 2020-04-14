@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import { Upload, UploadFile } from "./upload";
+import { Upload } from "./upload";
 import Button from "../Button";
 import Icon from "../Icon";
 
@@ -20,7 +20,7 @@ const simpleUpload = () => (
 );
 
 const checkUpload = () => {
-  const checkFileSize = (file: UploadFile) => {
+  const checkFileSize = (file: File) => {
     if (Math.round(file.size / 1024) > 50) {
       alert("file too big");
       return false;
@@ -42,7 +42,7 @@ const checkUpload = () => {
 const textCheck = `
 ### 示例代码
 ~~~javascript
-const checkFileSize = (file: UploadFile) => {
+const checkFileSize = (file: File) => {
   if (Math.round(file.size / 1024) > 50) {
     alert('file too big')
     return false;
