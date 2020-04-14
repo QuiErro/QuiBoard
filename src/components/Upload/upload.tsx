@@ -110,7 +110,7 @@ export const Upload: FC<UploadProps> = (props) => {
   };
   const uploadFiles = (files: FileList) => {
     let postFiles = Array.from(files);
-    postFiles.forEach((file) => {
+    postFiles.forEach((file: UploadFile) => {
       if (!beforeUpload) {
         post(file);
       } else {
@@ -126,6 +126,7 @@ export const Upload: FC<UploadProps> = (props) => {
     });
   };
   const post = (file: UploadFile) => {
+    // UploadFile?
     let _file: UploadFile = {
       uid: Date.now() + "upload-file",
       status: "ready",

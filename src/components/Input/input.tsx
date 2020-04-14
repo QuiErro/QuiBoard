@@ -26,7 +26,7 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, "size
 */
 
 export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
-  const { disabled, size, allowClear, icon, prepend, append, style, ...restProps } = props;
+  const { disabled, size, icon, prepend, append, style, ...restProps } = props;
   const classes = classNames("quib-input-wrapper", {
     [`input-size-${size}`]: size,
     "is-disabled": disabled,

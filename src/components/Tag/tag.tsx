@@ -6,6 +6,8 @@ import Transition from "../Transition";
 export type ThemeProps = "primary" | "success" | "warning" | "danger";
 
 export interface TagProps {
+  /** 自定义类名 */
+  className?: string;
   /** Tag的主题色 */
   type?: ThemeProps;
   /** Tag的尺寸 */
