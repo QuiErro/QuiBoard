@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/QuiErro/static/css/main.c8d314b8.chunk.css",
+    "main.js": "/QuiErro/main.3a6a81b3f30493864cdf.bundle.js",
+    "main.css.map": "/QuiErro/static/css/main.c8d314b8.chunk.css.map",
+    "main.js.map": "/QuiErro/main.3a6a81b3f30493864cdf.bundle.js.map",
+    "runtime~main.js": "/QuiErro/runtime~main.3a6a81b3f30493864cdf.bundle.js",
+    "runtime~main.js.map": "/QuiErro/runtime~main.3a6a81b3f30493864cdf.bundle.js.map",
+    "vendors~main.css": "/QuiErro/static/css/vendors~main.f8f248a5.chunk.css",
+    "vendors~main.js": "/QuiErro/vendors~main.3a6a81b3f30493864cdf.bundle.js",
+    "vendors~main.css.map": "/QuiErro/static/css/vendors~main.f8f248a5.chunk.css.map",
+    "vendors~main.js.map": "/QuiErro/vendors~main.3a6a81b3f30493864cdf.bundle.js.map",
+    "iframe.html": "/QuiErro/iframe.html",
+    "precache-manifest.57ba05c18ff3ace67aca19f1b0e2357b.js": "/QuiErro/precache-manifest.57ba05c18ff3ace67aca19f1b0e2357b.js",
+    "service-worker.js": "/QuiErro/service-worker.js",
+    "vendors~main.3a6a81b3f30493864cdf.bundle.js.LICENSE.txt": "/QuiErro/vendors~main.3a6a81b3f30493864cdf.bundle.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "runtime~main.3a6a81b3f30493864cdf.bundle.js",
+    "static/css/vendors~main.f8f248a5.chunk.css",
+    "vendors~main.3a6a81b3f30493864cdf.bundle.js",
+    "static/css/main.c8d314b8.chunk.css",
+    "main.3a6a81b3f30493864cdf.bundle.js"
+  ]
+}
