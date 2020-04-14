@@ -163,6 +163,7 @@ export const Select: FC<SelectProps> = (props) => {
           icon="angle-down"
           disabled={disabled}
           name={name}
+          autoComplete="off"
         />
       </div>
       <SelectContext.Provider value={passedContext}>
