@@ -3,9 +3,7 @@ import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { Input } from "./input";
 
-const defaultInput = () => (
-  <Input allowClear placeholder="default Input" onChange={action("changed")} />
-);
+const defaultInput = () => <Input placeholder="default Input" onChange={action("changed")} />;
 const disabledInput = () => <Input placeholder="disabled input" disabled />;
 
 const iconInput = () => <Input placeholder="input with icon" icon="search" />;

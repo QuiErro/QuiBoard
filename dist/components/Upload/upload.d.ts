@@ -16,15 +16,15 @@ export interface UploadProps {
   /** 上传的文件列表 */
   defaultFileList?: UploadFile[];
   /** 上传文件之前的钩子，参数为上传的文件，若返回 false 或者 Promise 则停止上传 */
-  beforeUpload?: (file: UploadFile) => boolean | Promise<File>;
+  beforeUpload?: (file: File) => boolean | Promise<File>;
   /** 文件上传时的钩子 */
-  onProgress?: (percentage: number, file: UploadFile) => void;
+  onProgress?: (percentage: number, file: File) => void;
   /** 文件上传成功时的钩子 */
-  onSuccess?: (data: any, file: UploadFile) => void;
+  onSuccess?: (data: any, file: File) => void;
   /** 文件上传失败时的钩子 */
-  onError?: (err: any, file: UploadFile) => void;
+  onError?: (err: any, file: File) => void;
   /** 文件状态改变时的钩子，上传成功或者失败时都会被调用	 */
-  onChange?: (file: UploadFile) => void;
+  onChange?: (file: File) => void;
   /** 文件列表移除文件时的钩子 */
   onRemove?: (file: UploadFile) => void;
   /** 设置上传的请求头部 */

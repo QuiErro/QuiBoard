@@ -85,12 +85,13 @@ export const Select: FC<SelectProps> = (props) => {
     setValue(value);
   };
   useEffect(() => {
-    const tempArr: String[] = [];
-    children.forEach((item) => {
+    const tempArr: string[] = [];
+    React.Children.map(children, (child) => {
+      const childElement = child as FunctionComponentElement<SelectOptionProps>;
       const {
-        props: { value },
-      } = item;
-      if (value !== "disabled") tempArr.push(value);
+        props: { value = "" },
+      } = childElement;
+      if (value !== "disabled" && value) tempArr.push(value);
     });
     setOptions(tempArr);
   }, [children]);

@@ -13,7 +13,7 @@ const simpleUpload = () => (
     onProgress={action("progress")}
     onRemove={action("removed")}
   >
-    <Button size="lg" btnType="primary">
+    <Button btnSize="lg" btnType="primary">
       <Icon icon="upload" /> 点击上传{" "}
     </Button>
   </Upload>
@@ -33,7 +33,7 @@ const checkUpload = () => {
       onChange={action("changed")}
       beforeUpload={checkFileSize}
     >
-      <Button size="lg" btnType="primary">
+      <Button btnSize="lg" btnType="primary">
         <Icon icon="upload" /> 不能传大于50Kb！{" "}
       </Button>
     </Upload>

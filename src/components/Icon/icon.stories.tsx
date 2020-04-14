@@ -9,7 +9,7 @@ const defaultIcons = () => (
     <Icon icon="times" size="3x" />
     <Icon icon="anchor" size="3x" />
     <Icon icon="trash" size="3x" />
-    <Button size="lg" btnType="primary">
+    <Button btnSize="lg" btnType="primary">
       <Icon icon="check" /> check{" "}
     </Button>
   </>

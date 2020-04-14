@@ -68,9 +68,11 @@ export var Select = function (props) {
   useEffect(
     function () {
       var tempArr = [];
-      children.forEach(function (item) {
-        var value = item.props.value;
-        if (value !== "disabled") tempArr.push(value);
+      React.Children.map(children, function (child) {
+        var childElement = child;
+        var _a = childElement.props.value,
+          value = _a === void 0 ? "" : _a;
+        if (value !== "disabled" && value) tempArr.push(value);
       });
       setOptions(tempArr);
     },

@@ -99,7 +99,6 @@ export var Upload = function (props) {
     });
   };
   var post = function (file) {
-    // UploadFile?
     var _file = {
       uid: Date.now() + "upload-file",
       status: "ready",
@@ -126,34 +125,28 @@ export var Upload = function (props) {
           var percentage = Math.round((e.loaded / e.total) * 100) || 0;
           if (percentage < 100) {
             updateFileList(_file, { percent: percentage, status: "uploading" });
-            _file.status = "uploading";
-            _file.percent = percentage;
             if (onProgress) {
-              onProgress(percentage, _file);
+              onProgress(percentage, file);
             }
           }
         },
       })
       .then(function (resp) {
         updateFileList(_file, { status: "success", response: resp.data });
-        _file.status = "success";
-        _file.response = resp.data;
         if (onSuccess) {
-          onSuccess(resp.data, _file);
+          onSuccess(resp.data, file);
         }
         if (onChange) {
-          onChange(_file);
+          onChange(file);
         }
       })
       .catch(function (err) {
         updateFileList(_file, { status: "error", error: err });
-        _file.status = "error";
-        _file.error = err;
         if (onError) {
-          onError(err, _file);
+          onError(err, file);
         }
         if (onChange) {
-          onChange(_file);
+          onChange(file);
         }
       });
   };
